@@ -1,4 +1,5 @@
-#pragma once
+#ifndef HITTABLE_LIST_H
+#define HITTABLE_LIST_H
 #include "hittable.h"
 
 #include <memory>
@@ -38,4 +39,4 @@ bool hittable_list::hit(const ray& r, double t_min, double t_max, hit_record& re
 
 	return hit_anything;
 }
-
+#endif

@@ -1,9 +1,14 @@
-#pragma once
+#ifndef COMMON_H
+#define COMMON_H
+
 
 #include <cmath>
 #include <limits>
 #include <memory>
 #include <cstdlib>
+#include <random>
+#include <ctime>
+
 
 using std::shared_ptr;
 using std::make_shared;
@@ -16,8 +21,11 @@ inline double degrees_to_radians(double degrees) {
 	return degrees * pi / 180.0;
 }
 
+
 inline double random_double() {
-	return rand() / (RAND_MAX + 1);
+	static std::uniform_real_distribution<double> distribution(0.0, 1.0);
+	static std::mt19937 generator;
+	return distribution(generator);
 }
 
 inline double random_double(double min, double max) {
@@ -32,3 +40,4 @@ inline double clamp(double x, double min, double max) {
 
 #include "ray.h"
 #include "vec3.h"
+#endif COMMON_H

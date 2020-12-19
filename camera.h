@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CAMERA_H
+#define CAMERA_H
 #include "common.h"
 
 class camera
@@ -26,3 +27,4 @@ private:
 	vec3 vertical;
 };
 
+#endif
